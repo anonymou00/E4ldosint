@@ -35,7 +35,6 @@ elif choice == "q":
 # Invalid Input
 else:
     print("Invalid choice! Please choose 'q' for Quiet or 'a' for Aggressive mode.")
-)
 
 
 
