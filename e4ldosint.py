@@ -10,13 +10,13 @@ if choice == "a":
     subprocess.run(["dirsearch", "-u", target, "--timeout=30", "--random-agent", "--crawl", "3"])
     subprocess.run(["wafw00f", target, "-v"])
     subprocess.run(["nmap", "-O", "-T4", "-sV", "-sS", "-p-", target])
-    subprocess.run(["theharvester", "-d", target, "-b", "all"])
     subprocess.run(["whois", "--verbose", target])
     subprocess.run(["nikto", "-h", f"https://{target}", "--check6", "--Display", "2", "--useragent", "Mozilla/5.0", "--timeout", "10"])
     subprocess.run(["whatweb", "-v", "-a", "4", "-l", target])
     subprocess.run(["assetfinder", target])
     subprocess.run(["dnsenum", "-w", "-v", "-t", "10", "--enum", "--threads", "5", "-s", "15", "-w", target])
     subprocess.run(["subfinder", target])
+    subprocess.run(["theharvester", "-d", target, "-b", "all"])
 
 # Quiet Mode
 elif choice == "q":
@@ -24,13 +24,13 @@ elif choice == "q":
     subprocess.run(["dirsearch", "-u", target, "--timeout=10", "--crawl", "1", "--random-agent", "--delay", "2"])
     subprocess.run(["wafw00f", target])
     subprocess.run(["nmap", "-sS", "-T1", "-Pn", target])
-    subprocess.run(["theharvester", "-d", target, "-b", "bing"])
     subprocess.run(["whois", target])
     subprocess.run(["nikto", "-h", f"https://{target}", "--Display", "0", "--timeout", "5", "--useragent", "Mozilla/5.0"])
     subprocess.run(["whatweb", "--no-errors", target])
     subprocess.run(["assetfinder", "--subs-only", target])
     subprocess.run(["dnsenum", "-t", "3", "--noreverse", "--nocolor", target])
     subprocess.run(["subfinder", "-d", target, "-silent"])
+    subprocess.run(["theharvester", "-d", target, "-b", "bing"])
 
 # Invalid Input
 else:
